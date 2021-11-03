@@ -6,20 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
-import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.angelfgdeveloper.manresapp.helpers.Constants;
+import com.angelfgdeveloper.manresapp.helpers.Validators;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
 
     private TextView tvForgotPassword, tvTitleCreateAccount, tvCreateAccount;
     private TextInputEditText etEmail, etPassword;
-    private Button btnLogin, btnGoogle;
+    private Button btnLogin, btnGoogle, btnTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.editTextPassword);
         btnLogin = findViewById(R.id.buttonLogin);
         btnGoogle = findViewById(R.id.buttonGoogle);
+        btnTest = findViewById(R.id.buttonTest);
     }
 
     private void methods() {
@@ -56,6 +57,11 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btnGoogle.setOnClickListener(v -> Toast.makeText(LoginActivity.this, "Inicio de sesión con Google", Toast.LENGTH_SHORT).show());
+
+        btnTest.setOnClickListener(v -> goToHome(false));
+
+        tvTitleCreateAccount.setOnClickListener(v -> goToRegister());
+        tvCreateAccount.setOnClickListener(v -> goToRegister());
     }
 
     private void validUser() {
@@ -63,11 +69,8 @@ public class LoginActivity extends AppCompatActivity {
         String password = etPassword.getText().toString();
 
         if (email.trim().length() > 0 && password.trim().length() > 0) {
-            if (isValidEmail(email) && isValidPassword(password)) {
-                Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
+            if (Validators.isValidEmail(email) && Validators.isValidPassword(password)) {
+                goToHome(true);
             } else {
                 Toast.makeText(LoginActivity.this, "Requiere un correo y contraseña mayor a 5 caracteres - validos", Toast.LENGTH_SHORT).show();
             }
@@ -76,11 +79,20 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private boolean isValidEmail(String email) {
-        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    private void goToHome(boolean isLoginUser) {
+        Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
+        intent.putExtra(Constants.IS_LOGIN_USER, isLoginUser);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
+        if (isLoginUser) {
+            finish();
+        }
     }
 
-    private boolean isValidPassword(String password) {
-        return password.length() >= 5;
+    private void goToRegister() {
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }

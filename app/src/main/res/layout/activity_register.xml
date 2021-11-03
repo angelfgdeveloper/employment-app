@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_marginTop="?actionBarSize"
         android:fillViewport="true">
 
         <LinearLayout
@@ -21,7 +30,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -40,10 +48,32 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:fontFamily="sans-serif"
-                    android:text="Inicio de sesión"
+                    android:text="Registrarme"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="24sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="8dp"
+                    android:hint="Nombre completo">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutEmail"
@@ -51,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:hint="Usuario y/o correo electrónico">
 
@@ -83,6 +113,29 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutConfPassword"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:hint="Confirmar contraseña"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextConfPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
                         android:imeOptions="actionDone"
                         android:inputType="textPassword"
                         android:singleLine="true"
@@ -90,109 +143,33 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-
                 <TextView
-                    android:id="@+id/textViewForgotPassword"
+                    android:id="@+id/textViewPrivacy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="8dp"
                     android:fontFamily="sans-serif"
-                    android:padding="8dp"
-                    android:text="¿Olvidaste tu contraseña?"
-                    android:textAlignment="center"
+                    android:padding="2dp"
+                    android:text="Al dar clic en Registrarme declaro haber leido y aceptado los Términos y condiciones así como la Politica de Privacidad de ABC123"
+                    android:textAlignment="textStart"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <Button
-                    android:id="@+id/buttonLogin"
+                    android:id="@+id/buttonRegister"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="8dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Iniciar sesión"
-                    android:textAllCaps="false"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/buttonGoogle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
-                    android:backgroundTint="@android:color/holo_red_dark"
                     android:fontFamily="sans-serif"
-                    android:text="Iniciar sesión con Google"
+                    android:text="Registrarme"
                     android:textAllCaps="false"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="2dp"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/buttonTest"
-                    style="@style/ButtonTest.MaterialDesign"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginBottom="6dp"
-                    android:text="Dale un vistazo"
-                    android:textAllCaps="false"
-                    android:textSize="16sp"
-                    app:icon="@drawable/ic_search" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="6dp">
-
-                <TextView
-                    android:id="@+id/textViewTitleCreateAccount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="4dp"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="¿Aun no tienes una cuenta?"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/textViewCreateAccount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Registrarme"
-                    android:textAlignment="textStart"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    tools:ignore="RtlCompat" />
 
             </LinearLayout>
 

@@ -1,7 +1,9 @@
 package com.angelfgdeveloper.manresapp;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,9 +18,18 @@ public class NavigationActivity extends AppCompatActivity {
 
     private ActivityNavigationBinding binding;
 
+    private boolean isLogin = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle args = getIntent().getExtras();
+        if(args != null){
+            isLogin = args.getBoolean(Constants.IS_LOGIN_USER);
+        }
+
+        Toast.makeText(this, "Acceso por Login: " + isLogin, Toast.LENGTH_SHORT).show();
 
         binding = ActivityNavigationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -34,4 +45,11 @@ public class NavigationActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (isLogin) {
+            finishAffinity(); // Cierra todas las Activities atras
+        }
+    }
 }
