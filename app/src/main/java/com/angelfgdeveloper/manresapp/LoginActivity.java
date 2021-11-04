@@ -41,9 +41,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void methods() {
-        tvForgotPassword.setOnClickListener(v -> Toast.makeText(LoginActivity.this, "Olvide mi contraseña!!!", Toast.LENGTH_SHORT).show());
-        tvTitleCreateAccount.setOnClickListener(v -> Toast.makeText(LoginActivity.this, "Titulo - Crear cuenta", Toast.LENGTH_SHORT).show());
-        tvCreateAccount.setOnClickListener(v -> Toast.makeText(LoginActivity.this, "Titulo - Crear cuenta", Toast.LENGTH_SHORT).show());
+
+        tvForgotPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ForgotPasswordActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
 
         btnLogin.setOnClickListener(v -> validUser());
 
