@@ -39,7 +39,6 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
-                    android:fontFamily="sans-serif"
                     android:text="Inicio de sesión"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -59,7 +58,6 @@
                         android:id="@+id/editTextEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif"
                         android:imeOptions="actionNext"
                         android:inputType="textEmailAddress"
                         android:singleLine="true"
@@ -82,7 +80,6 @@
                         android:id="@+id/editTextPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif"
                         android:imeOptions="actionDone"
                         android:inputType="textPassword"
                         android:singleLine="true"
@@ -98,7 +95,6 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="8dp"
-                    android:fontFamily="sans-serif"
                     android:padding="8dp"
                     android:text="¿Olvidaste tu contraseña?"
                     android:textAlignment="center"
@@ -113,7 +109,6 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="8dp"
-                    android:fontFamily="sans-serif"
                     android:text="Iniciar sesión"
                     android:textAllCaps="false"
                     android:textSize="16sp"
@@ -127,7 +122,6 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:backgroundTint="@android:color/holo_red_dark"
-                    android:fontFamily="sans-serif"
                     android:text="Iniciar sesión con Google"
                     android:textAllCaps="false"
                     android:textSize="16sp"
@@ -153,7 +147,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    android:text="Dale un vistazo"
+                    android:text="Da un vistazo"
                     android:textAllCaps="false"
                     android:textSize="16sp"
                     app:icon="@drawable/ic_search" />
@@ -167,31 +161,31 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="6dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textViewTitleCreateAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:fontFamily="sans-serif"
                     android:gravity="center"
-                    android:text="¿Aun no tienes una cuenta?"
+                    android:padding="6dp"
+                    android:text="¿Aun no has registrado?"
                     android:textAlignment="center"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/textViewCreateAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:fontFamily="sans-serif"
                     android:gravity="center"
+                    android:padding="6dp"
                     android:text="Registrarme"
                     android:textAlignment="textStart"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     tools:ignore="RtlCompat" />
 
             </LinearLayout>
