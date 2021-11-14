@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.angelfgdeveloper.manresapp.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_workDetailsFragment"
+            app:destination="@id/workDetailsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_exit"
@@ -28,5 +32,10 @@
         android:name="com.angelfgdeveloper.manresapp.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/workDetailsFragment"
+        android:name="com.angelfgdeveloper.manresapp.ui.details.WorkDetailsFragment"
+        android:label="fragment_work_details"
+        tools:layout="@layout/fragment_work_details" />
 
 </navigation>

@@ -3,9 +3,11 @@ package com.angelfgdeveloper.manresapp;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.angelfgdeveloper.manresapp.helpers.Constants;
+import com.angelfgdeveloper.manresapp.ui.details.WorkDetailsFragment;
 import com.angelfgdeveloper.manresapp.ui.exit.ExitFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -17,7 +19,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.angelfgdeveloper.manresapp.databinding.ActivityNavigationBinding;
 
-public class NavigationActivity extends AppCompatActivity implements ExitFragment.OnExitFragmentListener {
+public class NavigationActivity extends AppCompatActivity implements ExitFragment.OnExitFragmentListener, WorkDetailsFragment.OnWorkDetailsFragmentListener {
 
     private ActivityNavigationBinding binding;
     private BottomNavigationView navView;
@@ -68,6 +70,15 @@ public class NavigationActivity extends AppCompatActivity implements ExitFragmen
         super.onBackPressed();
         if (isLogin) {
             finishAffinity(); // Cierra todas las Activities - atras
+        }
+    }
+
+    @Override
+    public void setVisibleBottomNavigation(boolean isVisible) {
+        if (!isVisible) {
+            navView.setVisibility(View.GONE);
+        } else {
+            navView.setVisibility(View.VISIBLE);
         }
     }
 }
