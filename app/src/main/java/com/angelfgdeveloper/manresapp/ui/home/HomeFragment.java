@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
         toolbar = binding.toolbar;
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         if (((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Alef App");
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Logo App");
         }
 
         binding.linearLayoutLoading.setVisibility(View.VISIBLE);
