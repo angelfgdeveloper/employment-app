@@ -1,25 +1,18 @@
-package com.angelfgdeveloper.manresapp;
+package com.angelfgdeveloper.manresapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
-import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.helpers.Validators;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
 

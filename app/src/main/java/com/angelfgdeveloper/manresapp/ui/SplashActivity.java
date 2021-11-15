@@ -1,12 +1,12 @@
-package com.angelfgdeveloper.manresapp;
+package com.angelfgdeveloper.manresapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 
+import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.helpers.Constants;
 
 public class SplashActivity extends AppCompatActivity {

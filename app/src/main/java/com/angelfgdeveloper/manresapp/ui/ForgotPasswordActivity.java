@@ -1,4 +1,4 @@
-package com.angelfgdeveloper.manresapp;
+package com.angelfgdeveloper.manresapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,6 +10,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.helpers.Validators;
 import com.google.android.material.textfield.TextInputEditText;
 
