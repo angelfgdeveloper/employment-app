@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.helpers.Validators;
+import com.angelfgdeveloper.manresapp.utils.AppConstants;
+import com.angelfgdeveloper.manresapp.utils.SharedPreferencesManager;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
@@ -26,6 +28,21 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         findViews();
         methods();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        try {
+            String userToken = SharedPreferencesManager.getStringValue(AppConstants.USER_TOKEN);
+
+            if (!userToken.isEmpty()) {
+                goToHome(true);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void findViews() {
@@ -88,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
 
         if (isLoginUser) {
+            String userToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFuZ2VsIiwiaWF0IjoxNTE2MjM5MDIyfQ.5sqP7aP7XI_UOCQLvRQuWTDCusnyq-WVsBex8rrX_ic";
+            SharedPreferencesManager.setStringValue(AppConstants.USER_TOKEN, userToken);
             finish();
         }
     }
