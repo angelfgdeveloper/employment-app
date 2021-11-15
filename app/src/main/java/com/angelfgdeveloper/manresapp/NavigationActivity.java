@@ -66,15 +66,8 @@ public class NavigationActivity extends AppCompatActivity implements ExitFragmen
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        if (isLogin) {
-            finishAffinity(); // Cierra todas las Activities - atras
-        }
-    }
-
-    @Override
     public void setVisibleBottomNavigation(boolean isVisible) {
+        isLogin = false;
         if (!isVisible) {
             navView.setVisibility(View.GONE);
         } else {

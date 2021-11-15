@@ -96,7 +96,8 @@ public class RegisterActivity extends AppCompatActivity {
         intent.putExtra(Constants.IS_LOGIN_USER, true);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-        finish();
+//        finish();
+        finishAffinity();
     }
 
     @Override
