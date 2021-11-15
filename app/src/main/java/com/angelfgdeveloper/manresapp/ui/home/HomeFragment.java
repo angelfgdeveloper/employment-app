@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -39,7 +38,7 @@ public class HomeFragment extends Fragment {
         toolbar = binding.toolbar;
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         if (((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Logo App");
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("");
         }
 
         binding.linearLayoutLoading.setVisibility(View.VISIBLE);
