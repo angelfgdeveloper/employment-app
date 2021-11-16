@@ -71,7 +71,7 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputLayoutLocation"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
@@ -79,13 +79,12 @@
                         android:layout_marginRight="24dp"
                         android:hint="Ubicación (opcional)">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextLocation"
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteTextViewLocation"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionDone"
-                            android:inputType="textPostalAddress"
-                            android:singleLine="true"
+                            android:inputType="none"
                             android:textSize="16sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.angelfgdeveloper.manresapp.data.models.Work;
 import com.angelfgdeveloper.manresapp.databinding.FragmentWorkBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyWorkRecyclerViewAdapter extends RecyclerView.Adapter<MyWorkRecyclerViewAdapter.ViewHolder> {
@@ -27,6 +28,11 @@ public class MyWorkRecyclerViewAdapter extends RecyclerView.Adapter<MyWorkRecycl
 
     public void setDataWorkList(List<Work> work) {
         this.mWork = work;
+        notifyDataSetChanged();
+    }
+
+    public void setFilter(ArrayList<Work> newWorkList) {
+        this.mWork = newWorkList;
         notifyDataSetChanged();
     }
 

@@ -11,10 +11,51 @@ import java.util.List;
 
 public class HomeViewModel extends ViewModel {
     private final MutableLiveData<List<Work>> mWork;
+    private final MutableLiveData<List<String>> mStates;
 
     public HomeViewModel() {
         mWork = new MutableLiveData<>();
+        mStates = new MutableLiveData<>();
         mWork.setValue(workList());
+        mStates.setValue(stateList());
+    }
+
+    private List<String> stateList() {
+        List<String> state = new ArrayList<>();
+        state.add("Aguascalientes");
+        state.add("Baja California");
+        state.add("Baja California Sur");
+        state.add("Campeche");
+        state.add("Coahuila");
+        state.add("Colima");
+        state.add("Chiapas");
+        state.add("Chihuahua");
+        state.add("Durango");
+        state.add("Distrito Federal");
+        state.add("Guanajuato");
+        state.add("Guerrero");
+        state.add("Hidalgo");
+        state.add("Jalisco");
+        state.add("México");
+        state.add("Michoacán");
+        state.add("Morelos");
+        state.add("Nayarit");
+        state.add("Nuevo León");
+        state.add("Oaxaca");
+        state.add("Puebla");
+        state.add("Querétaro");
+        state.add("Quintana Roo");
+        state.add("San Luis Potosí");
+        state.add("Sinaloa");
+        state.add("Sonora");
+        state.add("Tabasco");
+        state.add("Tamaulipas");
+        state.add("Tlaxcala");
+        state.add("Veracruz");
+        state.add("Yucatán");
+        state.add("Zacatecas");
+
+        return state;
     }
 
     private List<Work> workList() {
@@ -325,5 +366,9 @@ public class HomeViewModel extends ViewModel {
 
     public LiveData<List<Work>> getAllWorks() {
         return mWork;
+    }
+
+    public LiveData<List<String>> getAllStates() {
+        return mStates;
     }
 }
