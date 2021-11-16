@@ -1,4 +1,4 @@
-package com.angelfgdeveloper.manresapp;
+package com.angelfgdeveloper.manresapp.ui;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.angelfgdeveloper.manresapp.R;
+import com.angelfgdeveloper.manresapp.databinding.ActivityNavigationBinding;
 import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.ui.details.WorkDetailsFragment;
 import com.angelfgdeveloper.manresapp.ui.exit.ExitFragment;
@@ -14,10 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import com.angelfgdeveloper.manresapp.databinding.ActivityNavigationBinding;
 
 public class NavigationActivity extends AppCompatActivity implements ExitFragment.OnExitFragmentListener, WorkDetailsFragment.OnWorkDetailsFragmentListener {
 

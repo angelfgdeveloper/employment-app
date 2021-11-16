@@ -1,8 +1,10 @@
-package com.angelfgdeveloper.manresapp;
+package com.angelfgdeveloper.manresapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.angelfgdeveloper.manresapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
