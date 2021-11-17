@@ -7,14 +7,19 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_exit"
-        android:icon="@drawable/ic_exit"
-        android:title="@string/title_exit" />
-
-    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_notifications"
         android:title="@string/title_notifications" />
+
+    <item
+        android:id="@+id/navigation_work_with_us"
+        android:icon="@drawable/ic_work_with_us"
+        android:title="@string/title_work_with_us" />
+
+    <item
+        android:id="@+id/navigation_exit"
+        android:icon="@drawable/ic_exit"
+        android:title="@string/title_exit" />
 
     <item
         android:id="@+id/navigation_profile"

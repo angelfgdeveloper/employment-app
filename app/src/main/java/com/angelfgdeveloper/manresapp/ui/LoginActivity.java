@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
@@ -75,7 +76,13 @@ public class LoginActivity extends AppCompatActivity {
             return handled;
         });
 
-        btnGoogle.setOnClickListener(v -> Toast.makeText(LoginActivity.this, "Inicio de sesión con Google", Toast.LENGTH_SHORT).show());
+        btnGoogle.setOnClickListener(v -> {
+            boolean isRegisterUser = true;
+            Intent intent = new Intent(LoginActivity.this, QuestionMainActivity.class);
+            intent.putExtra(Constants.IS_REGISTER_USER, isRegisterUser);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
 
         btnTest.setOnClickListener(v -> goToHome(false));
 

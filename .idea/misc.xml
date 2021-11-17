@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_exit.xml" value="0.2777777777777778" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_profile.xml" value="0.2777777777777778" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_work_with_us.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/splash_screen.xml" value="0.28425925925925927" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
@@ -12,14 +13,19 @@
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/activity_navigation.xml" value="0.264" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/activity_register.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/dropdown_menu_item.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_academic.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_exit.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_job.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_notifications.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_profile.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_work.xml" value="0.264" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_work_details.xml" value="0.264" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_work_list.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_work_with_us.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/question_fragment.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/question_main_activity.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/splash_activity.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/splash_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />

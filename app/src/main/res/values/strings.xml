@@ -2,6 +2,7 @@
     <string name="app_name">RHApp</string>
     <string name="title_home">Inicio</string>
     <string name="title_notifications">Notificaciones</string>
+    <string name="title_work_with_us">Trabaja con nosotros</string>
     <string name="title_profile">Perfil</string>
     <string name="title_exit">Salir</string>
 </resources>
