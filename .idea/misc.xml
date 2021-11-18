@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_exit.xml" value="0.2777777777777778" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_no_selected_favorite.xml" value="0.2824074074074074" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_profile.xml" value="0.2777777777777778" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_selected_favorite.xml" value="0.2824074074074074" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_share.xml" value="0.2824074074074074" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_work_with_us.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/splash_screen.xml" value="0.28425925925925927" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.2604166666666667" />
@@ -22,6 +25,7 @@
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_medic.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_notifications.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_profile.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_statistics.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_work.xml" value="0.264" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_work_details.xml" value="0.264" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_work_list.xml" value="0.25052083333333336" />

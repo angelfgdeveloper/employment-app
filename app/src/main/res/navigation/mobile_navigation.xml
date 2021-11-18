@@ -43,7 +43,16 @@
         android:id="@+id/workDetailsFragment"
         android:name="com.angelfgdeveloper.manresapp.ui.details.WorkDetailsFragment"
         android:label="fragment_work_details"
-        tools:layout="@layout/fragment_work_details" />
+        tools:layout="@layout/fragment_work_details" >
+        <action
+            android:id="@+id/action_workDetailsFragment_to_statisticsFragment"
+            app:destination="@id/statisticsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.angelfgdeveloper.manresapp.ui.statistics.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" />
 
 
 </navigation>

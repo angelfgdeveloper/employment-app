@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.data.models.Work;
 import com.angelfgdeveloper.manresapp.databinding.FragmentWorkDetailsBinding;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
@@ -80,6 +81,10 @@ public class WorkDetailsFragment extends Fragment {
         binding.textViewReleased.setText(work.getReleased());
         binding.textViewDescription.setText(work.getDescription());
         binding.textViewSalary.setText("$" + work.getSalary() + " MXN (" + work.getPayments() + ")");
+
+        binding.buttonStatistics.setOnClickListener(v -> {
+            Navigation.findNavController(root).navigate(R.id.action_workDetailsFragment_to_statisticsFragment);
+        });
 
         return root;
     }
