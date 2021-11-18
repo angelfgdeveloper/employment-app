@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.question.JobFragment">
+    tools:context=".ui.question.ExtrasFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,7 +22,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="4dp"
-                android:text="Información laboral"
+                android:text="Información extra"
                 android:textColor="@android:color/black"
                 android:textSize="28sp" />
 
@@ -32,24 +31,10 @@
                 android:layout_height="1dp"
                 android:background="?android:attr/listDivider" />
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switchExperience"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="4dp"
-                android:checked="false"
-                android:text=" ¿Has tenido por lo menos 3 empleos?"
-                android:textSize="16sp"
-                app:useMaterialThemeColors="true" />
-
             <LinearLayout
                 android:id="@+id/linearLayoutExperience"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="600dp"
                 android:background="#f8f8f8"
                 android:orientation="vertical">
 
@@ -86,7 +71,7 @@
                     tools:ignore="RtlHardcoded" />
 
                 <Button
-                    android:id="@+id/buttonNext"
+                    android:id="@+id/buttonFinish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -94,7 +79,7 @@
                     android:layout_marginEnd="24dp"
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/purple_700"
-                    android:text="Siguiente"
+                    android:text="Finalizar"
                     android:textAllCaps="false"
                     android:textSize="16sp"
                     tools:ignore="RtlHardcoded" />

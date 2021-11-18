@@ -17,6 +17,34 @@
         android:id="@+id/jobFragment"
         android:name="com.angelfgdeveloper.manresapp.ui.question.JobFragment"
         android:label="fragment_job"
-        tools:layout="@layout/fragment_job" />
+        tools:layout="@layout/fragment_job" >
+        <action
+            android:id="@+id/action_jobFragment_to_academicFragment"
+            app:destination="@id/academicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/academicFragment"
+        android:name="com.angelfgdeveloper.manresapp.ui.question.AcademicFragment"
+        android:label="fragment_academic"
+        tools:layout="@layout/fragment_academic" >
+        <action
+            android:id="@+id/action_academicFragment_to_medicFragment"
+            app:destination="@id/medicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicFragment"
+        android:name="com.angelfgdeveloper.manresapp.ui.question.MedicFragment"
+        android:label="fragment_medic"
+        tools:layout="@layout/fragment_medic" >
+        <action
+            android:id="@+id/action_medicFragment_to_extrasFragment"
+            app:destination="@id/extrasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/extrasFragment"
+        android:name="com.angelfgdeveloper.manresapp.ui.question.ExtrasFragment"
+        android:label="fragment_extras"
+        tools:layout="@layout/fragment_extras"/>
 
 </navigation>

@@ -33,13 +33,13 @@ public class QuestionFragment extends Fragment {
         binding = QuestionFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        binding.buttonNext.setOnClickListener(v -> goToAcademic(root));
+        binding.buttonNext.setOnClickListener(v -> goToJob(root));
 
 
         return root;
     }
 
-    private void goToAcademic(View view) {
+    private void goToJob(View view) {
 //        Gson gson = new Gson();
 //        String jsonWork = gson.toJson(work);
         Bundle bundle = new Bundle();

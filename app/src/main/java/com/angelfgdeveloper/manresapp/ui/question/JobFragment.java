@@ -55,7 +55,9 @@ public class JobFragment extends Fragment {
 
         binding.buttonBack.setOnClickListener(v -> Navigation.findNavController(root).popBackStack());
 
-        binding.buttonNext.setOnClickListener(v -> Toast.makeText(getActivity(), "Siguiente apartado", Toast.LENGTH_SHORT).show());
+        binding.buttonNext.setOnClickListener(v -> {
+            Navigation.findNavController(root).navigate(R.id.action_jobFragment_to_academicFragment);
+        });
 
         return root;
     }
