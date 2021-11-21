@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.FragmentJobBinding;
@@ -26,6 +27,8 @@ public class WorkWithUsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentWorkWithUsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        binding.buttonWorkWithUs.setOnClickListener(v -> Toast.makeText(getActivity(), "Disculpe las molestias estamos en desarrollo :D", Toast.LENGTH_SHORT).show());
 
         return root;
     }

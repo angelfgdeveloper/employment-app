@@ -4,10 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
@@ -16,10 +19,15 @@ import com.angelfgdeveloper.manresapp.databinding.QuestionFragmentBinding;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.google.gson.Gson;
 
+import java.util.List;
+
 public class QuestionFragment extends Fragment {
 
     private QuestionViewModel mViewModel;
     private QuestionFragmentBinding binding;
+
+    private String mGender = "";
+    private String mNationality = "";
 
     public static QuestionFragment newInstance() {
         return new QuestionFragment();
@@ -32,11 +40,31 @@ public class QuestionFragment extends Fragment {
 
         binding = QuestionFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        addSelectData();
 
         binding.buttonNext.setOnClickListener(v -> goToJob(root));
 
-
         return root;
+    }
+
+    private void addSelectData() {
+        mViewModel.getAllGender().observe(getViewLifecycleOwner(), gender -> {
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_menu_item, gender);
+            binding.autoCompleteTextViewGender.setAdapter(adapter);
+            binding.autoCompleteTextViewGender.setOnItemClickListener((parent, view1, position, id) -> {
+                mGender = parent.getItemAtPosition(position).toString();
+                Toast.makeText(getActivity(), mGender + " - Posicion: " + position + " id: " + id, Toast.LENGTH_SHORT).show();
+            });
+        });
+
+        mViewModel.getAllNationality().observe(getViewLifecycleOwner(), nationality -> {
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_menu_item, nationality);
+            binding.autoCompleteTextViewNationality.setAdapter(adapter);
+            binding.autoCompleteTextViewNationality.setOnItemClickListener((parent, view1, position, id) -> {
+                mNationality = parent.getItemAtPosition(position).toString();
+                Toast.makeText(getActivity(), mNationality + " - Posicion: " + position + " id: " + id, Toast.LENGTH_SHORT).show();
+            });
+        });
     }
 
     private void goToJob(View view) {
