@@ -18,6 +18,7 @@ import androidx.navigation.Navigation;
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.data.models.Work;
 import com.angelfgdeveloper.manresapp.databinding.FragmentWorkDetailsBinding;
+import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.google.gson.Gson;
 
@@ -27,6 +28,7 @@ public class WorkDetailsFragment extends Fragment {
     private Toolbar toolbar;
     private String jsonWork = "";
     private Work work;
+    private boolean isLogin = false;
 
     private OnWorkDetailsFragmentListener listener;
 
@@ -49,6 +51,7 @@ public class WorkDetailsFragment extends Fragment {
         listener.setVisibleBottomNavigation(false);
         if (getArguments() != null) {
             jsonWork = getArguments().getString(AppConstants.WORK);
+            isLogin = getArguments().getBoolean(Constants.IS_LOGIN_USER);
         }
     }
 
@@ -82,9 +85,15 @@ public class WorkDetailsFragment extends Fragment {
         binding.textViewDescription.setText(work.getDescription());
         binding.textViewSalary.setText("$" + work.getSalary() + " MXN (" + work.getPayments() + ")");
 
-        binding.buttonStatistics.setOnClickListener(v -> {
-            Navigation.findNavController(root).navigate(R.id.action_workDetailsFragment_to_statisticsFragment);
-        });
+        if (isLogin) {
+            binding.buttonStatistics.setEnabled(true);
+            binding.buttonStatistics.setOnClickListener(v -> {
+                Navigation.findNavController(root).navigate(R.id.action_workDetailsFragment_to_statisticsFragment);
+            });
+
+        } else {
+            binding.buttonStatistics.setEnabled(false);
+        }
 
         return root;
     }

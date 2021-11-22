@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -23,6 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.data.models.Work;
 import com.angelfgdeveloper.manresapp.databinding.FragmentHomeBinding;
+import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.helpers.Validators;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.google.gson.Gson;
@@ -39,6 +41,16 @@ public class HomeFragment extends Fragment {
 
     private List<Work> mWork;
     private String state = "";
+
+    private boolean isLogin = false;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            isLogin = getArguments().getBoolean(Constants.IS_LOGIN_USER);
+        }
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
@@ -126,6 +138,7 @@ public class HomeFragment extends Fragment {
         String jsonWork = gson.toJson(work);
         Bundle bundle = new Bundle();
         bundle.putString(AppConstants.WORK, jsonWork);
+        bundle.putBoolean(Constants.IS_LOGIN_USER, isLogin);
         Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_workDetailsFragment, bundle);
     }
 

@@ -60,6 +60,10 @@ public class NavigationActivity extends AppCompatActivity implements
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_navigation);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(Constants.IS_LOGIN_USER, isLogin);
+        navController.navigate(R.id.navigation_home, bundle);
     }
 
     @Override
