@@ -37,7 +37,11 @@
         android:id="@+id/navigation_profile"
         android:name="com.angelfgdeveloper.manresapp.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/workDetailsFragment"
@@ -53,6 +57,11 @@
         android:name="com.angelfgdeveloper.manresapp.ui.statistics.StatisticsFragment"
         android:label="fragment_statistics"
         tools:layout="@layout/fragment_statistics" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.angelfgdeveloper.manresapp.ui.profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
 
 
 </navigation>

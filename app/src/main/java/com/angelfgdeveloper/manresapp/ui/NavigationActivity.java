@@ -14,6 +14,7 @@ import com.angelfgdeveloper.manresapp.databinding.ActivityNavigationBinding;
 import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.ui.details.WorkDetailsFragment;
 import com.angelfgdeveloper.manresapp.ui.exit.ExitFragment;
+import com.angelfgdeveloper.manresapp.ui.profile.EditProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
-public class NavigationActivity extends AppCompatActivity implements ExitFragment.OnExitFragmentListener, WorkDetailsFragment.OnWorkDetailsFragmentListener {
+public class NavigationActivity extends AppCompatActivity implements
+        ExitFragment.OnExitFragmentListener,
+        WorkDetailsFragment.OnWorkDetailsFragmentListener,
+        EditProfileFragment.OnEditProfileFragmentListener {
 
     private ActivityNavigationBinding binding;
     private BottomNavigationView navView;
@@ -69,6 +73,16 @@ public class NavigationActivity extends AppCompatActivity implements ExitFragmen
 
     @Override
     public void setVisibleBottomNavigation(boolean isVisible) {
+        isLogin = false;
+        if (!isVisible) {
+            navView.setVisibility(View.GONE);
+        } else {
+            navView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void setEditVisibleBottomNavigation(boolean isVisible) {
         isLogin = false;
         if (!isVisible) {
             navView.setVisibility(View.GONE);

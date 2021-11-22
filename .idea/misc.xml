@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_edit_profile.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_exit.xml" value="0.2777777777777778" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_img_notify.xml" value="0.2740740740740741" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_no_selected_favorite.xml" value="0.2824074074074074" />
@@ -19,6 +20,7 @@
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/dropdown_menu_item.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_academic.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_edit_profile.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_exit.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_extras.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />

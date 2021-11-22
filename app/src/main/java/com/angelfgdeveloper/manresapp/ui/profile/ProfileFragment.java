@@ -12,9 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
+import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.FragmentProfileBinding;
 import com.angelfgdeveloper.manresapp.helpers.Constants;
+import com.angelfgdeveloper.manresapp.ui.LoginActivity;
+import com.angelfgdeveloper.manresapp.ui.QuestionMainActivity;
 import com.angelfgdeveloper.manresapp.ui.SplashActivity;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.angelfgdeveloper.manresapp.utils.SharedPreferencesManager;
@@ -31,6 +35,10 @@ public class ProfileFragment extends Fragment {
         View root = binding.getRoot();
 
         binding.buttonLogout.setOnClickListener(v -> logout());
+
+        binding.imageButtonEdit.setOnClickListener(v -> {
+            Navigation.findNavController(root).navigate(R.id.action_navigation_profile_to_editProfileFragment);
+        });
 
         return root;
     }
