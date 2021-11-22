@@ -1,20 +1,23 @@
-package com.angelfgdeveloper.manresapp.ui.question;
+package com.angelfgdeveloper.manresapp.ui.question.job;
 
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.FrameLayout;
 
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.FragmentJobBinding;
+import com.angelfgdeveloper.manresapp.ui.question.QuestionViewModel;
 
 public class JobFragment extends Fragment {
 
@@ -44,14 +47,7 @@ public class JobFragment extends Fragment {
 
         binding = FragmentJobBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        binding.switchExperience.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                binding.linearLayoutExperience.setBackgroundColor(Color.BLUE);
-            } else {
-                binding.linearLayoutExperience.setBackgroundResource(R.color.purple_200);
-            }
-        });
+        initFragment();
 
         binding.buttonBack.setOnClickListener(v -> Navigation.findNavController(root).popBackStack());
 
@@ -60,5 +56,30 @@ public class JobFragment extends Fragment {
         });
 
         return root;
+    }
+
+    private void initFragment() {
+        Fragment lastJobsFragment = new LastJobsFragment();
+        Fragment referencesFragment = new ReferencesFragment();
+
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.add(R.id.fragmentContainer, lastJobsFragment);
+        transaction.commit();
+
+        binding.switchExperience.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                fragmentContainer(lastJobsFragment);
+            } else {
+                fragmentContainer(referencesFragment);
+            }
+        });
+    }
+
+    private void fragmentContainer(Fragment fragment) {
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.commit();
     }
 }

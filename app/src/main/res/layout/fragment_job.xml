@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.question.JobFragment">
+    tools:context=".ui.question.job.JobFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="4dp"
-                android:checked="false"
+                android:checked="true"
                 android:text=" ¿Has tenido por lo menos 3 empleos?"
                 android:textSize="16sp"
                 app:useMaterialThemeColors="true" />
@@ -49,17 +49,13 @@
             <LinearLayout
                 android:id="@+id/linearLayoutExperience"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:background="#f8f8f8"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <FrameLayout
+                    android:id="@+id/fragmentContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="En desarrollo"
-                    android:textColor="@android:color/black"
-                    android:textSize="28sp" />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
