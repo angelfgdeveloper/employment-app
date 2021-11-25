@@ -10,10 +10,12 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.RadioButton;
 
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.FragmentJobBinding;
@@ -62,18 +64,17 @@ public class JobFragment extends Fragment {
         Fragment lastJobsFragment = new LastJobsFragment();
         Fragment referencesFragment = new ReferencesFragment();
 
-        FragmentManager fm = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
-        transaction.add(R.id.fragmentContainer, lastJobsFragment);
-        transaction.commit();
-
-        binding.switchExperience.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                fragmentContainer(lastJobsFragment);
-            } else {
-                fragmentContainer(referencesFragment);
+        binding.radioGroupExperience.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.radioButtonYes:
+                    fragmentContainer(lastJobsFragment);
+                    break;
+                case R.id.radioButtonNot:
+                    fragmentContainer(referencesFragment);
+                    break;
             }
         });
+
     }
 
     private void fragmentContainer(Fragment fragment) {

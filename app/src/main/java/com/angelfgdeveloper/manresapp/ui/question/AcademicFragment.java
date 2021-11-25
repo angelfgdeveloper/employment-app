@@ -50,16 +50,49 @@ public class AcademicFragment extends Fragment {
             binding.autoCompleteTextViewEducation.setAdapter(adapter);
             binding.autoCompleteTextViewEducation.setOnItemClickListener((parent, view1, position, id) -> {
                 mDegrees = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getActivity(), mDegrees + " - Posicion: " + position + " id: " + id, Toast.LENGTH_SHORT).show();
+
+                if (mDegrees.equals("Profesional (Ing./Lic./Etc.)")) {
+                    binding.textInputLayoutCareer.setVisibility(View.VISIBLE);
+                } else if (mDegrees.equals("Posgrado")) {
+                    binding.textInputLayoutCareer.setVisibility(View.VISIBLE);
+                } else {
+                    binding.textInputLayoutCareer.setVisibility(View.GONE);
+                    binding.textInputLayoutApprovingDocument.setVisibility(View.GONE);
+                    binding.llOptionPostgraduate.setVisibility(View.GONE);
+                }
+
             });
         });
 
         mViewModel.getAllAdvanceStudies().observe(getViewLifecycleOwner(), advanceStudies -> {
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_menu_item, advanceStudies);
-            binding.autoCompleteTextViewAdvance.setAdapter(adapter);
-            binding.autoCompleteTextViewAdvance.setOnItemClickListener((parent, view1, position, id) -> {
-                mAdvanceStudies = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getActivity(), mAdvanceStudies + " - Posicion: " + position + " id: " + id, Toast.LENGTH_SHORT).show();
+            ArrayAdapter<String> adapterAdvanceStudies = new ArrayAdapter<>(getContext(), R.layout.dropdown_menu_item, advanceStudies);
+            binding.autoCompleteTextViewAdvance.setAdapter(adapterAdvanceStudies);
+
+            binding.autoCompleteTextViewAdvance.setOnItemClickListener((parent2, view2, position2, id2) -> {
+                mAdvanceStudies = parent2.getItemAtPosition(position2).toString();
+
+                if (mDegrees.equals("Profesional (Ing./Lic./Etc.)")) {
+                    binding.textInputLayoutCareer.setVisibility(View.VISIBLE);
+                    if (mAdvanceStudies.equals("Concluido")) {
+                        binding.textInputLayoutApprovingDocument.setVisibility(View.VISIBLE);
+                    } else {
+                        binding.textInputLayoutApprovingDocument.setVisibility(View.GONE);
+                    }
+                } else if (mDegrees.equals("Posgrado")) {
+                    binding.textInputLayoutCareer.setVisibility(View.VISIBLE);
+                    if (mAdvanceStudies.equals("Concluido")) {
+                        binding.textInputLayoutApprovingDocument.setVisibility(View.VISIBLE);
+                        binding.llOptionPostgraduate.setVisibility(View.VISIBLE);
+                    } else {
+                        binding.textInputLayoutApprovingDocument.setVisibility(View.GONE);
+                        binding.llOptionPostgraduate.setVisibility(View.GONE);
+                    }
+                } else {
+                    binding.textInputLayoutCareer.setVisibility(View.GONE);
+                    binding.textInputLayoutApprovingDocument.setVisibility(View.GONE);
+                    binding.llOptionPostgraduate.setVisibility(View.GONE);
+                }
+
             });
         });
 
