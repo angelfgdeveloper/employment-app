@@ -1,6 +1,7 @@
 package com.angelfgdeveloper.manresapp.ui.profile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.angelfgdeveloper.manresapp.databinding.FragmentEditProfileBinding;
+import com.angelfgdeveloper.manresapp.helpers.Constants;
+import com.angelfgdeveloper.manresapp.ui.LoginActivity;
+import com.angelfgdeveloper.manresapp.ui.QuestionMainActivity;
 
 public class EditProfileFragment extends Fragment {
 
@@ -81,6 +85,12 @@ public class EditProfileFragment extends Fragment {
 
         binding.buttonSave.setOnClickListener(v -> {
             Toast.makeText(requireContext(), "Datos guardados correctamente", Toast.LENGTH_SHORT).show();
+        });
+
+        binding.buttonInfoPersonal.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), QuestionMainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
         });
 
         return root;
