@@ -9,7 +9,7 @@ import com.angelfgdeveloper.manresapp.helpers.SelectData;
 import java.util.List;
 
 public class QuestionViewModel extends ViewModel {
-    private final MutableLiveData<List<String>> mGender, mNationality, mDegrees, mAdvanceStudies, mMonths, mHealth, mYesAndNot, mBloodType;
+    private final MutableLiveData<List<String>> mGender, mNationality, mDegrees, mAdvanceStudies, mMonths, mHealth, mYesAndNot, mBloodType, mEvidentialDocument;
 
     public QuestionViewModel() {
         mGender = new MutableLiveData<>();
@@ -20,6 +20,7 @@ public class QuestionViewModel extends ViewModel {
         mHealth = new MutableLiveData<>();
         mYesAndNot = new MutableLiveData<>();
         mBloodType = new MutableLiveData<>();
+        mEvidentialDocument = new MutableLiveData<>();
 
         mGender.setValue(SelectData.genderList());
         mNationality.setValue(SelectData.nationalityList());
@@ -29,6 +30,7 @@ public class QuestionViewModel extends ViewModel {
         mHealth.setValue(SelectData.healthList());
         mYesAndNot.setValue(SelectData.yesAndNotList());
         mBloodType.setValue(SelectData.bloodTypeList());
+        mEvidentialDocument.setValue(SelectData.evidentialDocumentList());
     }
 
     public LiveData<List<String>> getAllGender() {
@@ -61,6 +63,10 @@ public class QuestionViewModel extends ViewModel {
 
     public LiveData<List<String>> getAllBloodType() {
         return mBloodType;
+    }
+
+    public LiveData<List<String>> getAllEvidentialDocument() {
+        return mEvidentialDocument;
     }
 
 }

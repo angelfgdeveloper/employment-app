@@ -19,10 +19,7 @@ public class AcademicFragment extends Fragment {
     private QuestionViewModel mViewModel;
     private FragmentAcademicBinding binding;
 
-    private String mDegrees = "";
-    private String mAdvanceStudies = "";
-    private String mStartMonths = "";
-    private String mLastMonths = "";
+    private String mDegrees = "", mAdvanceStudies = "", mStartMonths = "", mLastMonths = "", mEvidentialDocument = "";
 
     public static AcademicFragment newInstance(String param1, String param2) {
         AcademicFragment fragment = new AcademicFragment();
@@ -109,6 +106,16 @@ public class AcademicFragment extends Fragment {
             binding.autoCompleteTextViewLastMonth.setOnItemClickListener((parent, view1, position, id) -> {
                 mLastMonths = parent.getItemAtPosition(position).toString();
                 Toast.makeText(getActivity(), mLastMonths + " - Posicion: " + position + " id: " + id, Toast.LENGTH_SHORT).show();
+            });
+        });
+
+        mViewModel.getAllEvidentialDocument().observe(getViewLifecycleOwner(), evidentialDocument -> {
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_menu_item, evidentialDocument);
+            binding.autoCompleteTextViewApprovingDocument.setAdapter(adapter);
+
+            binding.autoCompleteTextViewApprovingDocument.setOnItemClickListener((parent, view1, position, id) -> {
+                mEvidentialDocument = parent.getItemAtPosition(position).toString();
+                Toast.makeText(getActivity(), mEvidentialDocument + " - Posicion: " + position + " id: " + id, Toast.LENGTH_SHORT).show();
             });
         });
     }

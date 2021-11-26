@@ -87,6 +87,7 @@ public class WorkDetailsFragment extends Fragment {
 
         if (isLogin) {
             binding.buttonStatistics.setEnabled(true);
+            binding.buttonStatistics.setText("Estadisticas empresariales");
             binding.buttonStatistics.setOnClickListener(v -> {
                 Navigation.findNavController(root).navigate(R.id.action_workDetailsFragment_to_statisticsFragment);
             });

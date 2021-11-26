@@ -30,10 +30,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="Ultimos trabajo o actual"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutOccupation"
+                android:id="@+id/textInputLayoutCurrentOccupation"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,7 +43,7 @@
                 app:helperText="Agente/chofer/Guardia/Etc.">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextOccupation"
+                    android:id="@+id/editTextCurrentOccupation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -52,7 +53,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutDepartment"
+                android:id="@+id/textInputLayoutCurrentDepartment"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,7 +62,7 @@
                 app:helperText="RH/Sistemas/Mantenimiento/Etc.">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextDepartment"
+                    android:id="@+id/editTextCurrentDepartment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -71,7 +72,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutBoss"
+                android:id="@+id/textInputLayoutCurrentBoss"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,7 +81,7 @@
                 app:helperText="Nombre del jefe inmediato o encargado responsable">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextBoss"
+                    android:id="@+id/editTextCurrentBoss"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -95,7 +96,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayoutCompanyPhone"
+                    android:id="@+id/textInputLayoutCurrentCompanyPhone"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -104,7 +105,7 @@
                     android:hint="Telefono de la empresa">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editTextCompanyPhone"
+                        android:id="@+id/editTextCurrentCompanyPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:imeOptions="actionNext"
@@ -114,7 +115,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayoutCompanyTime"
+                    android:id="@+id/textInputLayoutCurrentCompanyTime"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -128,7 +129,7 @@
                     app:suffixText="Mes(es)">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editTextCompanyTime"
+                        android:id="@+id/editTextCurrentCompanyTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:imeOptions="actionNext"
@@ -140,7 +141,7 @@
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutDetailsSeparation"
+                android:id="@+id/textInputLayoutCurrentDetailsSeparation"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -151,7 +152,7 @@
                 app:helperText="Detalle su punto de vista o testimonio">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextDetailsSeparation"
+                    android:id="@+id/editTextCurrentDetailsSeparation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
@@ -171,7 +172,284 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="Penultimo trabajo"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutPenultimateOccupation"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Puesto"
+                app:helperText="Agente/chofer/Guardia/Etc.">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPenultimateOccupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutPenultimateDepartment"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Departamento"
+                app:helperText="RH/Sistemas/Mantenimiento/Etc.">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPenultimateDepartment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutPenultimateBoss"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Jefe inmediato"
+                app:helperText="Nombre del jefe inmediato o encargado responsable">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPenultimateBoss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPenultimateCompanyPhone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:hint="Telefono de la empresa">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextPenultimateCompanyPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPenultimateCompanyTime"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_weight="1"
+                    android:hint="Tiempo en la empresa"
+                    app:endIconDrawable="@drawable/ic_calendar"
+                    app:endIconMode="custom"
+                    app:suffixText="Mes(es)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextPenultimateCompanyTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutPenultimateDetailsSeparation"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Motivo(s) de separacion."
+                app:counterEnabled="true"
+                app:counterMaxLength="500"
+                app:helperText="Detalle su punto de vista o testimonio">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPenultimateDetailsSeparation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLength="500"
+                    android:maxLines="4"
+                    android:minLines="2"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Ante-penultimo trabajo"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutAntepenultimateOccupation"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Puesto"
+                app:helperText="Agente/chofer/Guardia/Etc.">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextAntepenultimateOccupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutAntepenultimateDepartment"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Departamento"
+                app:helperText="RH/Sistemas/Mantenimiento/Etc.">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextAntepenultimateDepartment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutAntepenultimateBoss"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Jefe inmediato"
+                app:helperText="Nombre del jefe inmediato o encargado responsable">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextAntepenultimateBoss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutAntepenultimateCompanyPhone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:hint="Telefono de la empresa">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextAntepenultimateCompanyPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutAntepenultimateCompanyTime"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_weight="1"
+                    android:hint="Tiempo en la empresa"
+                    app:endIconDrawable="@drawable/ic_calendar"
+                    app:endIconMode="custom"
+                    app:suffixText="Mes(es)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextAntepenultimateCompanyTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutAntepenultimateDetailsSeparation"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Motivo(s) de separacion."
+                app:counterEnabled="true"
+                app:counterMaxLength="500"
+                app:helperText="Detalle su punto de vista o testimonio">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextAntepenultimateDetailsSeparation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLength="500"
+                    android:maxLines="4"
+                    android:minLines="2"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 

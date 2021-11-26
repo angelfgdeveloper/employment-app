@@ -2,6 +2,7 @@ package com.angelfgdeveloper.manresapp.ui.question.job;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -43,7 +44,7 @@ public class LastJobsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mViewModel = new ViewModelProvider(this).get(QuestionViewModel.class);
 
         binding = FragmentLastJobsBinding.inflate(inflater, container, false);

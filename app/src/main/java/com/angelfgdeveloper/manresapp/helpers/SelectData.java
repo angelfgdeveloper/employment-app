@@ -83,4 +83,12 @@ public class SelectData {
         bloodType.add("No sé");
         return bloodType;
     }
+
+    public static List<String> evidentialDocumentList() {
+        List<String> evidentialDocument = new ArrayList<>();
+        evidentialDocument.add("Titulo y cedula");
+        evidentialDocument.add("Pasante");
+        evidentialDocument.add("Certificado");
+        return evidentialDocument;
+    }
 }

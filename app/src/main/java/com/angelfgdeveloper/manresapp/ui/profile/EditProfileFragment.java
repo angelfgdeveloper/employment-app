@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -72,6 +73,14 @@ public class EditProfileFragment extends Fragment {
         toolbar.setNavigationOnClickListener(v -> {
             Navigation.findNavController(binding.getRoot()).popBackStack();
             listener.setEditVisibleBottomNavigation(true);
+        });
+
+        binding.editTextLastName.setText("Steve Jobs");
+        binding.editTextEmail.setText("steve@test.com");
+        binding.editTextEmail.setEnabled(false);
+
+        binding.buttonSave.setOnClickListener(v -> {
+            Toast.makeText(requireContext(), "Datos guardados correctamente", Toast.LENGTH_SHORT).show();
         });
 
         return root;
