@@ -433,6 +433,42 @@
 
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/buttonNewFile"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="4dp"
+                                android:backgroundTint="@color/black"
+                                android:layout_weight="1"
+                                android:text="Añadir Curriculum"
+                                android:textAllCaps="false"
+                                android:textSize="16sp"
+                                tools:ignore="RtlHardcoded" />
+
+                            <TextView
+                                android:id="@+id/textViewNameFile"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_weight="1"
+                                android:visibility="gone"
+                                android:gravity="center_vertical"
+                                android:textSize="16sp"
+                                tools:text="File" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>

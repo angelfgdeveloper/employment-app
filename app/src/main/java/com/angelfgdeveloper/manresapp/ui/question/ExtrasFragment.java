@@ -1,18 +1,25 @@
 package com.angelfgdeveloper.manresapp.ui.question;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.FragmentExtrasBinding;
@@ -36,6 +43,15 @@ public class ExtrasFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
+    ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            Intent data = result.getData();
+            binding.textViewNameFile.setVisibility(View.VISIBLE);
+            binding.textViewNameFile.setText("Archivo: " + data.getData());
+        }
+    });
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mViewModel = new ViewModelProvider(this).get(QuestionViewModel.class);
@@ -49,7 +65,18 @@ public class ExtrasFragment extends Fragment {
             listener.setQuestionInfo("Encuesta realizada!!!");
         });
 
+        binding.buttonNewFile.setOnClickListener(v -> {
+            callChooseFileFromDevide();
+        });
+
         return root;
+    }
+
+    private void callChooseFileFromDevide() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("application/pdf");
+        someActivityResultLauncher.launch(intent);
     }
 
     private void addSelectData() {
