@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/academicFragment"
-        android:name="com.angelfgdeveloper.manresapp.ui.question.AcademicFragment"
+        android:name="com.angelfgdeveloper.manresapp.ui.question.academic.AcademicFragment"
         android:label="fragment_academic"
         tools:layout="@layout/fragment_academic" >
         <action

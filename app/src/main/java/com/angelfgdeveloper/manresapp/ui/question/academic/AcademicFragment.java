@@ -1,5 +1,6 @@
-package com.angelfgdeveloper.manresapp.ui.question;
+package com.angelfgdeveloper.manresapp.ui.question.academic;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.FragmentAcademicBinding;
+import com.angelfgdeveloper.manresapp.ui.question.QuestionViewModel;
 
 public class AcademicFragment extends Fragment {
 
@@ -33,6 +37,8 @@ public class AcademicFragment extends Fragment {
         binding = FragmentAcademicBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         addSelectData();
+
+        selectedFragment();
 
         binding.buttonBack.setOnClickListener(v -> Navigation.findNavController(root).popBackStack());
 
@@ -119,4 +125,34 @@ public class AcademicFragment extends Fragment {
             });
         });
     }
+
+    @SuppressLint("NonConstantResourceId")
+    private void selectedFragment() {
+        Fragment postgraduateFragment = new PostgraduateFragment();
+        Fragment processAcademicFragment = new ProcessAcademicFragment();
+
+        binding.radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.radioButtonYes:
+                    fragmentContainer(postgraduateFragment);
+                    break;
+                case R.id.radioButtonNot:
+                    binding.llAcademic.setVisibility(View.GONE);
+                    break;
+                case R.id.radioButtonInProcess:
+                    fragmentContainer(processAcademicFragment);
+                    break;
+            }
+        });
+
+    }
+
+    private void fragmentContainer(Fragment fragment) {
+        binding.llAcademic.setVisibility(View.VISIBLE);
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.commit();
+    }
+
 }
