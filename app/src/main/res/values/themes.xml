@@ -42,6 +42,8 @@
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/roboto_regular</item>
+
+<!--        <item name="textInputStyle">@style/TextInputLayout.Normal.MaterialDesgin</item>-->
     </style>
 
     <style name="ButtonTest.MaterialDesign" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
@@ -53,5 +55,11 @@
         <item name="iconTint">@android:color/darker_gray</item>
         <item name="strokeColor">@android:color/darker_gray</item>
     </style>
+
+    <!-- Corregir TextInputLayout por default -->
+    <style name="TextInputLayout.Normal.MaterialDesgin" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+    </style>
+
 
 </resources>
