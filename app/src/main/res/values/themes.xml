@@ -43,7 +43,7 @@
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/roboto_regular</item>
 
-<!--        <item name="textInputStyle">@style/TextInputLayout.Normal.MaterialDesgin</item>-->
+        <item name="textInputStyle">@style/TextInputLayout.Normal.MaterialDesgin</item>
     </style>
 
     <style name="ButtonTest.MaterialDesign" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
@@ -61,5 +61,10 @@
 
     </style>
 
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/purple_500</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:background">#ddd</item>
+    </style>
 
 </resources>
