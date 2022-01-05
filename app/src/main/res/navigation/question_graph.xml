@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/question_graph"
-    app:startDestination="@id/questionFragment">
+    app:startDestination="@id/selectRegisterFragment">
 
     <fragment
         android:id="@+id/questionFragment"
@@ -46,5 +46,14 @@
         android:name="com.angelfgdeveloper.manresapp.ui.question.ExtrasFragment"
         android:label="fragment_extras"
         tools:layout="@layout/fragment_extras"/>
+    <fragment
+        android:id="@+id/selectRegisterFragment"
+        android:name="com.angelfgdeveloper.manresapp.ui.question.SelectRegisterFragment"
+        android:label="fragment_select_register"
+        tools:layout="@layout/fragment_select_register" >
+        <action
+            android:id="@+id/action_selectRegisterFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
 
 </navigation>

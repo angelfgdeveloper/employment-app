@@ -28,9 +28,18 @@ public class QuestionFragment extends Fragment {
 
     private String mGender = "";
     private String mNationality = "";
+    private String mData = "";
 
     public static QuestionFragment newInstance() {
         return new QuestionFragment();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mData = getArguments().getString("DATA_USER");
+        }
     }
 
     @Nullable
@@ -40,6 +49,8 @@ public class QuestionFragment extends Fragment {
 
         binding = QuestionFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        Toast.makeText(getActivity(), "Registro tipo: " + mData, Toast.LENGTH_SHORT).show();
         addSelectData();
 
         binding.buttonNext.setOnClickListener(v -> goToJob(root));
