@@ -1,6 +1,7 @@
 package com.angelfgdeveloper.manresapp.ui.question;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import androidx.navigation.Navigation;
 
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.QuestionFragmentBinding;
+import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.google.gson.Gson;
 
@@ -50,7 +52,6 @@ public class QuestionFragment extends Fragment {
         binding = QuestionFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Toast.makeText(getActivity(), "Registro tipo: " + mData, Toast.LENGTH_SHORT).show();
         addSelectData();
 
         binding.buttonNext.setOnClickListener(v -> goToJob(root));

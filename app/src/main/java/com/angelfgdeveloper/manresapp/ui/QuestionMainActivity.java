@@ -1,15 +1,13 @@
 package com.angelfgdeveloper.manresapp.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.angelfgdeveloper.manresapp.R;
-import com.angelfgdeveloper.manresapp.databinding.ActivityNavigationBinding;
 import com.angelfgdeveloper.manresapp.databinding.QuestionMainActivityBinding;
 import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.ui.question.ExtrasFragment;
@@ -19,6 +17,7 @@ import com.angelfgdeveloper.manresapp.utils.SharedPreferencesManager;
 public class QuestionMainActivity extends AppCompatActivity implements ExtrasFragment.OnExtraFragmentListener {
 
     private QuestionMainActivityBinding binding;
+    private String mTypeUser = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +25,11 @@ public class QuestionMainActivity extends AppCompatActivity implements ExtrasFra
 
         binding = QuestionMainActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Bundle args = getIntent().getExtras();
+        if (args != null) {
+            mTypeUser = args.getString(Constants.IS_USER_EDIT);
+        }
 
     }
 
@@ -40,4 +44,5 @@ public class QuestionMainActivity extends AppCompatActivity implements ExtrasFra
         SharedPreferencesManager.setStringValue(AppConstants.USER_TOKEN, userToken);
         finishAffinity();
     }
+
 }

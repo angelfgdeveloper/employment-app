@@ -14,9 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ManResApp">
         <activity
+            android:name=".ui.SelectRegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar" />
+        <activity
             android:name=".ui.QuestionMainActivity"
-            android:theme="@style/Theme.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar" />
         <activity
             android:name=".ui.ForgotPasswordActivity"
             android:exported="false"

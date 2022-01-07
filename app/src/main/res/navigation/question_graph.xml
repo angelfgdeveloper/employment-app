@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/question_graph"
-    app:startDestination="@id/selectRegisterFragment">
+    app:startDestination="@id/questionFragment">
 
     <fragment
         android:id="@+id/questionFragment"
         android:name="com.angelfgdeveloper.manresapp.ui.question.QuestionFragment"
-        android:label="QuestionFragment" >
+        android:label="QuestionFragment">
         <action
             android:id="@+id/action_questionFragment_to_jobFragment"
             app:destination="@id/jobFragment" />
@@ -17,7 +17,7 @@
         android:id="@+id/jobFragment"
         android:name="com.angelfgdeveloper.manresapp.ui.question.job.JobFragment"
         android:label="fragment_job"
-        tools:layout="@layout/fragment_job" >
+        tools:layout="@layout/fragment_job">
         <action
             android:id="@+id/action_jobFragment_to_academicFragment"
             app:destination="@id/academicFragment" />
@@ -26,7 +26,7 @@
         android:id="@+id/academicFragment"
         android:name="com.angelfgdeveloper.manresapp.ui.question.academic.AcademicFragment"
         android:label="fragment_academic"
-        tools:layout="@layout/fragment_academic" >
+        tools:layout="@layout/fragment_academic">
         <action
             android:id="@+id/action_academicFragment_to_medicFragment"
             app:destination="@id/medicFragment" />
@@ -35,7 +35,7 @@
         android:id="@+id/medicFragment"
         android:name="com.angelfgdeveloper.manresapp.ui.question.MedicFragment"
         android:label="fragment_medic"
-        tools:layout="@layout/fragment_medic" >
+        tools:layout="@layout/fragment_medic">
         <action
             android:id="@+id/action_medicFragment_to_extrasFragment"
             app:destination="@id/extrasFragment" />
@@ -45,15 +45,6 @@
         android:id="@+id/extrasFragment"
         android:name="com.angelfgdeveloper.manresapp.ui.question.ExtrasFragment"
         android:label="fragment_extras"
-        tools:layout="@layout/fragment_extras"/>
-    <fragment
-        android:id="@+id/selectRegisterFragment"
-        android:name="com.angelfgdeveloper.manresapp.ui.question.SelectRegisterFragment"
-        android:label="fragment_select_register"
-        tools:layout="@layout/fragment_select_register" >
-        <action
-            android:id="@+id/action_selectRegisterFragment_to_questionFragment"
-            app:destination="@id/questionFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_extras" />
 
 </navigation>

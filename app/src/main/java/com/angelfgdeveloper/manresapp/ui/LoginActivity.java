@@ -77,9 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btnGoogle.setOnClickListener(v -> {
-            boolean isRegisterUser = true;
-            Intent intent = new Intent(LoginActivity.this, QuestionMainActivity.class);
-            intent.putExtra(Constants.IS_REGISTER_USER, isRegisterUser);
+            Intent intent = new Intent(LoginActivity.this, SelectRegisterActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
