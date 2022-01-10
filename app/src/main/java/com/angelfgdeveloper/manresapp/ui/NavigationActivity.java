@@ -23,11 +23,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.ActivityNavigationBinding;
-import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.ui.details.WorkDetailsFragment;
 import com.angelfgdeveloper.manresapp.ui.exit.ExitFragment;
 import com.angelfgdeveloper.manresapp.ui.profile.EditProfileFragment;
 import com.angelfgdeveloper.manresapp.ui.profile.ProfileViewModel;
+import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -59,10 +59,10 @@ public class NavigationActivity extends AppCompatActivity implements
     private void init() {
         Bundle args = getIntent().getExtras();
         if (args != null) {
-            isLogin = args.getBoolean(Constants.IS_LOGIN_USER);
+            isLogin = args.getBoolean(AppConstants.IS_LOGIN_USER);
 
-            if (args.getString(Constants.IS_COMPLETE_TEST_SUCCESS) != null) {
-                isCompleteTestSuccess = args.getString(Constants.IS_COMPLETE_TEST_SUCCESS);
+            if (args.getString(AppConstants.IS_COMPLETE_TEST_SUCCESS) != null) {
+                isCompleteTestSuccess = args.getString(AppConstants.IS_COMPLETE_TEST_SUCCESS);
             }
         }
 
@@ -88,7 +88,7 @@ public class NavigationActivity extends AppCompatActivity implements
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         Bundle bundle = new Bundle();
-        bundle.putBoolean(Constants.IS_LOGIN_USER, isLogin);
+        bundle.putBoolean(AppConstants.IS_LOGIN_USER, isLogin);
         navController.navigate(R.id.navigation_home, bundle);
     }
 
@@ -110,7 +110,7 @@ public class NavigationActivity extends AppCompatActivity implements
     public void onClosedPreview(boolean isClosed) {
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
         Intent intent = new Intent(this, SplashActivity.class);
-        intent.putExtra(Constants.IS_CLOSED_PREVIEW_TIME, isClosed);
+        intent.putExtra(AppConstants.IS_CLOSED_PREVIEW_TIME, isClosed);
         startActivity(intent, options.toBundle());
         finishAffinity();
     }

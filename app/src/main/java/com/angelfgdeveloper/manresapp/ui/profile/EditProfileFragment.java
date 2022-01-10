@@ -15,8 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.angelfgdeveloper.manresapp.databinding.FragmentEditProfileBinding;
-import com.angelfgdeveloper.manresapp.helpers.Constants;
-import com.angelfgdeveloper.manresapp.ui.LoginActivity;
 import com.angelfgdeveloper.manresapp.ui.QuestionMainActivity;
 
 public class EditProfileFragment extends Fragment {

@@ -3,7 +3,6 @@ package com.angelfgdeveloper.manresapp.ui.details;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import androidx.navigation.Navigation;
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.data.models.Work;
 import com.angelfgdeveloper.manresapp.databinding.FragmentWorkDetailsBinding;
-import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.google.gson.Gson;
 
@@ -51,7 +49,7 @@ public class WorkDetailsFragment extends Fragment {
         listener.setVisibleBottomNavigation(false);
         if (getArguments() != null) {
             jsonWork = getArguments().getString(AppConstants.WORK);
-            isLogin = getArguments().getBoolean(Constants.IS_LOGIN_USER);
+            isLogin = getArguments().getBoolean(AppConstants.IS_LOGIN_USER);
         }
     }
 

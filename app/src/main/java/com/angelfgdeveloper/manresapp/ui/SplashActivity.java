@@ -1,13 +1,13 @@
 package com.angelfgdeveloper.manresapp.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.angelfgdeveloper.manresapp.R;
-import com.angelfgdeveloper.manresapp.helpers.Constants;
+import com.angelfgdeveloper.manresapp.utils.AppConstants;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -22,8 +22,8 @@ public class SplashActivity extends AppCompatActivity {
 
     private void init() {
         Bundle args = getIntent().getExtras();
-        if(args != null){
-            isClosedPreview = args.getBoolean(Constants.IS_CLOSED_PREVIEW_TIME);
+        if (args != null) {
+            isClosedPreview = args.getBoolean(AppConstants.IS_CLOSED_PREVIEW_TIME);
         }
 
         if (isClosedPreview) {

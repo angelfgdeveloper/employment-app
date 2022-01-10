@@ -31,6 +31,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/llRegisterPerson"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -58,6 +59,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/llRegisterCompany"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -85,6 +87,14 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnReturnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginVertical="8dp"
+            android:text="Regresar" />
 
     </LinearLayout>
 

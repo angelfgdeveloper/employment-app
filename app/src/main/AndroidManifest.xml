@@ -18,6 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ManResApp">
         <activity
+            android:name=".ui.SelectRegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar" />
+        <activity
             android:name=".ui.QuestionMainActivity"
             android:exported="false"
             android:theme="@style/Theme.NoActionBar" />

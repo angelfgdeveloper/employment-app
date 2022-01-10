@@ -10,16 +10,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.QuestionFragmentBinding;
-import com.angelfgdeveloper.manresapp.utils.AppConstants;
-import com.google.gson.Gson;
-
-import java.util.List;
 
 public class QuestionFragment extends Fragment {
 
@@ -50,7 +45,6 @@ public class QuestionFragment extends Fragment {
         binding = QuestionFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Toast.makeText(getActivity(), "Registro tipo: " + mData, Toast.LENGTH_SHORT).show();
         addSelectData();
 
         binding.buttonNext.setOnClickListener(v -> goToJob(root));

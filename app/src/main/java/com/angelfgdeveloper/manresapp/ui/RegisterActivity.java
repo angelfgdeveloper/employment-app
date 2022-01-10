@@ -1,16 +1,15 @@
 package com.angelfgdeveloper.manresapp.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.angelfgdeveloper.manresapp.R;
-import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.helpers.Validators;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.angelfgdeveloper.manresapp.utils.SharedPreferencesManager;
@@ -89,9 +88,9 @@ public class RegisterActivity extends AppCompatActivity {
     private void goToHome() {
         String userToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFuZ2VsIiwiaWF0IjoxNTE2MjM5MDIyfQ.5sqP7aP7XI_UOCQLvRQuWTDCusnyq-WVsBex8rrX_ic";
         SharedPreferencesManager.setStringValue(AppConstants.USER_TOKEN, userToken);
-        
+
         Intent intent = new Intent(RegisterActivity.this, NavigationActivity.class);
-        intent.putExtra(Constants.IS_LOGIN_USER, true);
+        intent.putExtra(AppConstants.IS_LOGIN_USER, true);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
 //        finish();

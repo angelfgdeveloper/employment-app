@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/drawable/ic_person.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/drawable/ic_profile.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/drawable/ic_register_business.xml" value="0.2175925925925926" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/layout/activity_login.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/layout/activity_select_register.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/layout/dialog_person_or_company.xml" value="0.2" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/layout/fragment_select_register.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/layout/question_fragment.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/layout/question_main_activity.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/PC1/Documents/AndroidProjects/alef-app/app/src/main/res/layout/splash_activity.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_calendar.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_edit_profile.xml" value="0.28615384615384615" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/drawable/ic_exit.xml" value="0.2777777777777778" />
@@ -45,11 +55,14 @@
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/splash_activity.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/layout/splash_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/angel/Documents/AndroidStudio/manResApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/dialog_person_or_company.xml" value="0.22685185185185186" />
         <entry key="app/src/main/res/layout/fragment_job.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_select_register.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/question_main_activity.xml" value="0.26197916666666665" />
+=======
+>>>>>>> main
       </map>
     </option>
   </component>

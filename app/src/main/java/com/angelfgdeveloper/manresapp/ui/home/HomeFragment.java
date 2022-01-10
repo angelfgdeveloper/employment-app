@@ -8,7 +8,6 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -24,7 +23,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.data.models.Work;
 import com.angelfgdeveloper.manresapp.databinding.FragmentHomeBinding;
-import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.helpers.Validators;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.google.gson.Gson;
@@ -48,7 +46,7 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            isLogin = getArguments().getBoolean(Constants.IS_LOGIN_USER);
+            isLogin = getArguments().getBoolean(AppConstants.IS_LOGIN_USER);
         }
     }
 
@@ -138,7 +136,7 @@ public class HomeFragment extends Fragment {
         String jsonWork = gson.toJson(work);
         Bundle bundle = new Bundle();
         bundle.putString(AppConstants.WORK, jsonWork);
-        bundle.putBoolean(Constants.IS_LOGIN_USER, isLogin);
+        bundle.putBoolean(AppConstants.IS_LOGIN_USER, isLogin);
         Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_workDetailsFragment, bundle);
     }
 

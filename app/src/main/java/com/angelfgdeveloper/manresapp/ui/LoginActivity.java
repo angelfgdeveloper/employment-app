@@ -4,14 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.angelfgdeveloper.manresapp.R;
-import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.helpers.Validators;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.angelfgdeveloper.manresapp.utils.SharedPreferencesManager;
@@ -77,9 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btnGoogle.setOnClickListener(v -> {
-            boolean isRegisterUser = true;
-            Intent intent = new Intent(LoginActivity.this, QuestionMainActivity.class);
-            intent.putExtra(Constants.IS_REGISTER_USER, isRegisterUser);
+            Intent intent = new Intent(LoginActivity.this, SelectRegisterActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
@@ -107,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void goToHome(boolean isLoginUser) {
         Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
-        intent.putExtra(Constants.IS_LOGIN_USER, isLoginUser);
+        intent.putExtra(AppConstants.IS_LOGIN_USER, isLoginUser);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
 
