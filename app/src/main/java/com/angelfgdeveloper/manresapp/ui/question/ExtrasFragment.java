@@ -62,7 +62,7 @@ public class ExtrasFragment extends Fragment {
         binding.buttonBack.setOnClickListener(v -> Navigation.findNavController(root).popBackStack());
 
         binding.buttonFinish.setOnClickListener(v -> {
-            listener.setQuestionInfo("Encuesta realizada!!!");
+            listener.setQuestionInfo("Success_Test");
         });
 
         binding.buttonNewFile.setOnClickListener(v -> {

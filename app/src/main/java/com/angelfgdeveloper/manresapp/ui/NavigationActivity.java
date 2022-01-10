@@ -2,6 +2,7 @@ package com.angelfgdeveloper.manresapp.ui;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -45,6 +47,7 @@ public class NavigationActivity extends AppCompatActivity implements
 
     private boolean isLogin = false;
     private String mPhotoPath = "";
+    private String isCompleteTestSuccess = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,10 @@ public class NavigationActivity extends AppCompatActivity implements
         Bundle args = getIntent().getExtras();
         if (args != null) {
             isLogin = args.getBoolean(Constants.IS_LOGIN_USER);
+
+            if (args.getString(Constants.IS_COMPLETE_TEST_SUCCESS) != null) {
+                isCompleteTestSuccess = args.getString(Constants.IS_COMPLETE_TEST_SUCCESS);
+            }
         }
 
         Toast.makeText(this, "Acceso por Login: " + isLogin, Toast.LENGTH_SHORT).show();
@@ -73,12 +80,30 @@ public class NavigationActivity extends AppCompatActivity implements
             navView.getMenu().removeItem(R.id.navigation_exit);
         }
 
+        if (isCompleteTestSuccess.equals("Success_Test")) {
+            showCustomDialog();
+        }
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_navigation);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         Bundle bundle = new Bundle();
         bundle.putBoolean(Constants.IS_LOGIN_USER, isLogin);
         navController.navigate(R.id.navigation_home, bundle);
+    }
+
+    private void showCustomDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+        builder.setTitle("Información guardada");
+        builder.setMessage("Los datos fueron guardados exitosamente!");
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Toast.makeText(NavigationActivity.this, isCompleteTestSuccess, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     @Override

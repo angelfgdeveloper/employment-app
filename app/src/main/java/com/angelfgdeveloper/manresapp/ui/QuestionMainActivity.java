@@ -33,6 +33,7 @@ public class QuestionMainActivity extends AppCompatActivity implements ExtrasFra
     public void setQuestionInfo(String infoUser) {
         Intent intent = new Intent(this, NavigationActivity.class);
         intent.putExtra(Constants.IS_LOGIN_USER, true);
+        intent.putExtra(Constants.IS_COMPLETE_TEST_SUCCESS, infoUser);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
 
