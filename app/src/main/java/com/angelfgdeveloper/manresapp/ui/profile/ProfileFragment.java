@@ -3,11 +3,15 @@ package com.angelfgdeveloper.manresapp.ui.profile;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,11 +30,14 @@ import com.angelfgdeveloper.manresapp.ui.NavigationActivity;
 import com.angelfgdeveloper.manresapp.ui.QuestionMainActivity;
 import com.angelfgdeveloper.manresapp.ui.SplashActivity;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
+import com.angelfgdeveloper.manresapp.utils.LoadConvertPhotoFileTask;
 import com.angelfgdeveloper.manresapp.utils.SharedPreferencesManager;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.listener.single.CompositePermissionListener;
 import com.karumi.dexter.listener.single.DialogOnDeniedPermissionListener;
 import com.karumi.dexter.listener.single.PermissionListener;
+
+import java.io.File;
 
 public class ProfileFragment extends Fragment {
 
@@ -62,7 +69,7 @@ public class ProfileFragment extends Fragment {
         super.onResume();
         String photoPath = ((NavigationActivity)getActivity()).setPhoto();
         if (!photoPath.isEmpty()) {
-            Log.d("TAG", photoPath);
+            new LoadConvertPhotoFileTask(binding.imageViewProfile).execute(photoPath);
         }
     }
 
