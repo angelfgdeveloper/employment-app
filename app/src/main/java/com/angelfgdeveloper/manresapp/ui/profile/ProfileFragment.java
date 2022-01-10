@@ -1,11 +1,15 @@
 package com.angelfgdeveloper.manresapp.ui.profile;
 
+import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,15 +22,21 @@ import com.angelfgdeveloper.manresapp.R;
 import com.angelfgdeveloper.manresapp.databinding.FragmentProfileBinding;
 import com.angelfgdeveloper.manresapp.helpers.Constants;
 import com.angelfgdeveloper.manresapp.ui.LoginActivity;
+import com.angelfgdeveloper.manresapp.ui.NavigationActivity;
 import com.angelfgdeveloper.manresapp.ui.QuestionMainActivity;
 import com.angelfgdeveloper.manresapp.ui.SplashActivity;
 import com.angelfgdeveloper.manresapp.utils.AppConstants;
 import com.angelfgdeveloper.manresapp.utils.SharedPreferencesManager;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.listener.single.CompositePermissionListener;
+import com.karumi.dexter.listener.single.DialogOnDeniedPermissionListener;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;
     private FragmentProfileBinding binding;
+    private PermissionListener mAllPermissionListener;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
@@ -36,11 +46,44 @@ public class ProfileFragment extends Fragment {
 
         binding.buttonLogout.setOnClickListener(v -> logout());
 
+        binding.imageViewProfile.setOnClickListener(view -> {
+            checkPermissions();
+        });
+
         binding.imageButtonEdit.setOnClickListener(v -> {
             Navigation.findNavController(root).navigate(R.id.action_navigation_profile_to_editProfileFragment);
         });
 
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        String photoPath = ((NavigationActivity)getActivity()).setPhoto();
+        if (!photoPath.isEmpty()) {
+            Log.d("TAG", photoPath);
+        }
+    }
+
+    private void checkPermissions() {
+        PermissionListener dialogDeniedPermissionListener =
+                DialogOnDeniedPermissionListener.Builder.withContext(getActivity())
+                        .withTitle("Permisos")
+                        .withMessage("Los permisos solicitados son necesarios para poder seleccionar una foto de perfil")
+                        .withButtonText("Aceptar")
+                        .withIcon(R.mipmap.ic_launcher)
+                        .build();
+
+        mAllPermissionListener = new CompositePermissionListener(
+                (PermissionListener) getActivity(),
+                dialogDeniedPermissionListener
+        );
+
+        Dexter.withContext(getActivity())
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withListener(mAllPermissionListener)
+                .check();
     }
 
     private void logout() {
